@@ -120,12 +120,12 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t $IMAGE_NAME:latest \
-                       -t $IMAGE_NAME:$SHA_SHORT .
+                       -t $IMAGE_NAME:${GITHUB_SHA} .
 
       - name: Push Docker image
         run: |
           docker push $IMAGE_NAME:latest
-          docker push $IMAGE_NAME:$SHA_SHORT
+          docker push $IMAGE_NAME:${GITHUB_SHA}
 
 
   # 6️⃣ Image Scan - Trivy
