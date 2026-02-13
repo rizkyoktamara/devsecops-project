@@ -54,9 +54,10 @@ jobs:
 
       - name: Install Bandit
         run: pip install bandit
-
+        
       - name: Run Bandit
-        run: bandit -r . -x tests
+        run: bandit -r . -s B101
+
 
 
   # 3️⃣ SCA - pip-audit
