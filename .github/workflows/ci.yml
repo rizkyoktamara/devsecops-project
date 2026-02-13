@@ -32,7 +32,10 @@ jobs:
           pip install pytest
 
       - name: Run pytest
+        env:
+          PYTHONPATH: .
         run: pytest
+
 
 
   # 2️⃣ SAST - Bandit
