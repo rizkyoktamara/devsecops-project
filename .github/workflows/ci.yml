@@ -11,7 +11,7 @@ env:
 
 jobs:
 
-  # 1️⃣ Unit Test
+  # Unit Test
   unit_test:
     name: Unit Test (pytest)
     runs-on: ubuntu-latest
@@ -38,7 +38,7 @@ jobs:
 
 
 
-  # 2️⃣ SAST - Bandit
+  # SAST - Bandit
   sast:
     name: SAST (Bandit)
     runs-on: ubuntu-latest
@@ -60,7 +60,7 @@ jobs:
 
 
 
-  # 3️⃣ SCA - pip-audit
+  # SCA - pip-audit
   sca:
     name: SCA (pip-audit)
     runs-on: ubuntu-latest
@@ -83,7 +83,7 @@ jobs:
 
 
 
-  # 4️⃣ Secret Scan - Gitleaks
+  # Secret Scan - Gitleaks
   secret_scan:
     name: Secret Scan (Gitleaks)
     runs-on: ubuntu-latest
@@ -98,7 +98,7 @@ jobs:
           args: detect --source . --verbose
 
 
-  # 5️⃣ Build & Push Docker Image
+  # Build & Push Docker Image
   build_and_push:
     name: Build & Push Docker Image
     runs-on: ubuntu-latest
@@ -129,7 +129,7 @@ jobs:
           docker push $IMAGE_NAME:${GITHUB_SHA}
 
 
-  # 6️⃣ Image Scan - Trivy
+  # Image Scan - Trivy
   image_scan:
     name: Image Scan (Trivy)
     runs-on: ubuntu-latest
